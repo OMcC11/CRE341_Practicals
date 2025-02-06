@@ -157,11 +157,7 @@ MonoBehaviour:
   height: 128
   seed: 0
   useRandomSeed: 1
-<<<<<<< Updated upstream
   randomFillPercent: 70
-=======
-  randomFillPercent: 51
->>>>>>> Stashed changes
   numberOfNPCs: 5
   surface: {fileID: 797153120}
   raycastHeight: 50
