@@ -10,7 +10,7 @@ using UnityEditor.ShaderGraph.Internal;
 public class MapGenerator : MonoBehaviour {
 
 	public GameObject player; // Reference to your player prefab
-	public GameObject npcPrefab, waypointsPrefab; // Reference to your NPC prefab
+	public GameObject npcPrefab, waypointsPrefab, gunPrefab; 
 	public GameObject groundObject;
 	public int width;
 	public int height;
@@ -49,6 +49,7 @@ public class MapGenerator : MonoBehaviour {
 
 		SpawnWayPoints(numberWaypoints);
 		SpawnNPCs(numberOfNPCs);
+		SpawnGub(gunPrefab);
 	}
 
 
@@ -69,10 +70,12 @@ public class MapGenerator : MonoBehaviour {
 
 			SpawnWayPoints(numberWaypoints);
 			SpawnNPCs(numberOfNPCs);
-		}
+            SpawnGub(gunPrefab);
+        }
 	}
 
-	void GenerateMap() {
+
+    void GenerateMap() {
 		map = new int[width,height];
 		RandomFillMap();
 
@@ -526,6 +529,37 @@ public class MapGenerator : MonoBehaviour {
 			}
 		}
 	}
+
+    private void SpawnGub(GameObject gunPrefab)
+    {
+        Vector3 randomNPCPos = Vector3.zero;
+        bool validPositionFound = false;
+        int attempts = 0;
+
+        while (!validPositionFound && attempts < maxAttempts)
+        {
+            randomNPCPos = GetRandomGroundPoint();
+            if (randomNPCPos != Vector3.zero)
+            {
+                NavMeshHit hit;
+                if (NavMesh.SamplePosition(randomNPCPos, out hit, 1.0f, NavMesh.AllAreas))
+                {
+                    randomNPCPos = hit.position;
+                    validPositionFound = true;
+                }
+            }
+            attempts++;
+        }
+
+        if (validPositionFound)
+        {
+            Instantiate(gunPrefab, randomNPCPos, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Failed to find a valid NavMesh point for Waypoint.");
+        }
+    }
 
     private void SpawnWayPoints(int count)
 	{
