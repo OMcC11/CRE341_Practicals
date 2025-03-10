@@ -70,7 +70,7 @@ public class CustomBullet : MonoBehaviour
         collisions++;
 
         //explode if bullet hits an enemy directly and explodeontouch is activated
-        if (collision.collider.CompareTag("Enemy") && explosionOnTouch) Explode();
+        if (collision.collider.CompareTag("NPC") && explosionOnTouch) Explode();
     }
 
     private void SetUp()
@@ -80,7 +80,7 @@ public class CustomBullet : MonoBehaviour
         physics_mat.frictionCombine = PhysicsMaterialCombine.Minimum;
         physics_mat.bounceCombine = PhysicsMaterialCombine.Maximum;
 
-        //GetComponent<SphereCollider>().material = physics_mat;
+        GetComponent<SphereCollider>().material = physics_mat;
 
         rb.useGravity = useGravity;
     }

@@ -1925,7 +1925,6 @@ GameObject:
   - component: {fileID: 1092724261}
   - component: {fileID: 1092724260}
   - component: {fileID: 1092724259}
-  - component: {fileID: 1092724264}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -2049,31 +2048,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1092724264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092724258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3dada565e949e44481305df22366641, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 1092724259}
-  explosion: {fileID: 0}
-  whatIsEnemies:
-    serializedVersion: 2
-    m_Bits: 0
-  bounciness: 0.8
-  useGravity: 0
-  explosionDamage: 300
-  explosionRange: 1
-  explosionForce: 0
-  maxCollisions: 1
-  maxLifeTime: 0
-  explosionOnTouch: 1
 --- !u!4 &1098599602 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
@@ -2434,6 +2408,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: df0af03ca4de49d48912d857104cdfab, type: 3}
       propertyPath: m_Name
       value: Bullet_Pistol_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: df0af03ca4de49d48912d857104cdfab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

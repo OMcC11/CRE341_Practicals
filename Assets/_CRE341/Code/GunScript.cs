@@ -124,7 +124,7 @@ public class Gun : MonoBehaviour
     private void DestroyGun()
     {
         if (magazineSize <= 0)
-            //Destroy(gameObject);
-            this.gameObject.SetActive(false);
+            Destroy(gameObject);
+            //this.gameObject.SetActive(false);
     }
 }
