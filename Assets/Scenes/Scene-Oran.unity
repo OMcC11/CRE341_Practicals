@@ -267,7 +267,6 @@ GameObject:
   - component: {fileID: 320919903}
   - component: {fileID: 320919902}
   - component: {fileID: 320919904}
-  - component: {fileID: 320919906}
   - component: {fileID: 320919905}
   m_Layer: 7
   m_Name: NPC_00
@@ -275,7 +274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &320919901
 Transform:
   m_ObjectHideFlags: 0
@@ -285,7 +284,7 @@ Transform:
   m_GameObject: {fileID: 320919900}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6487945, y: -18.9, z: 27.39}
+  m_LocalPosition: {x: -1.6487945, y: -21.83, z: 27.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -376,29 +375,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1559428527}
   damage: 1
---- !u!136 &320919906
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320919900}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2.01
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &414995375
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +467,7 @@ MonoBehaviour:
   seed: 0
   useRandomSeed: 1
   randomFillPercent: 50
-  numberOfNPCs: 5
+  numberOfNPCs: 0
   npcs: []
   numberWaypoints: 4
   waypoints: []
@@ -666,7 +642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 45018c3cf72de1344adc1cc880aeb68d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -958,7 +934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &705884271
 Transform:
   m_ObjectHideFlags: 0
@@ -1828,6 +1804,7 @@ GameObject:
   - component: {fileID: 1092724261}
   - component: {fileID: 1092724260}
   - component: {fileID: 1092724259}
+  - component: {fileID: 1092724264}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1951,6 +1928,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1092724264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092724258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3c5048e6d2ab342bcceb22f59ee494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1098599602 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
@@ -2028,13 +2017,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e46716f06ee0344a93747cb1e363b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 821992031}
+  bullet: {fileID: 1092724258}
   shootForce: 30
   upwardForce: 0
   timeBetweenShooting: 0.1
   spread: 3
-  timeBetweenShots: 0
-  magazineSize: 3
+  timeBetweenShots: 0.1
+  magazineSize: 15
   bulletsPerTap: 1
   allowButtonHold: 0
   fpsCam: {fileID: 1098599606}
