@@ -75,7 +75,7 @@ public class Gun : MonoBehaviour
             targetPoint = ray.GetPoint(75); //just a point far away from the player
 
         //calculate direction fromattackPoint to targetPoint;
-        Vector3 directionWithoutSpread = targetPoint = attackPoint.position;
+        Vector3 directionWithoutSpread = targetPoint - attackPoint.position;
 
         //calculate spread
         float x = Random.Range(-spread, spread);

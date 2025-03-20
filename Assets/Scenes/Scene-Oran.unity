@@ -267,14 +267,13 @@ GameObject:
   - component: {fileID: 320919903}
   - component: {fileID: 320919902}
   - component: {fileID: 320919904}
-  - component: {fileID: 320919905}
   m_Layer: 7
   m_Name: NPC_00
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &320919901
 Transform:
   m_ObjectHideFlags: 0
@@ -361,20 +360,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &320919905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320919900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ebf3cce74fbdaf4abc0b3dab4c539cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: {fileID: 1559428527}
-  damage: 1
 --- !u!1 &414995375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,6 +2118,7 @@ GameObject:
   - component: {fileID: 1452556657}
   - component: {fileID: 1452556656}
   - component: {fileID: 1452556655}
+  - component: {fileID: 1452556659}
   m_Layer: 7
   m_Name: AIObj
   m_TagString: NPC
@@ -2258,6 +2244,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452556653}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1452556659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452556653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ebf3cce74fbdaf4abc0b3dab4c539cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 0}
+  damage: 1
 --- !u!1001 &1494374492
 PrefabInstance:
   m_ObjectHideFlags: 0
