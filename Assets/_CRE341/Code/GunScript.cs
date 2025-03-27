@@ -57,6 +57,10 @@ public class Gun : MonoBehaviour
 
             Shoot();
         }
+        else if (bulletsLeft < 1)
+        {
+            this.GameObject().SetActive(false);
+        }
     }
 
     public void Shoot()
@@ -124,7 +128,7 @@ public class Gun : MonoBehaviour
     private void DestroyGun()
     {
         if (magazineSize <= 0)
-            Destroy(this);
+            Destroy(gameObject);
             //this.gameObject.SetActive(false);
     }
 }
