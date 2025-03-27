@@ -2008,7 +2008,7 @@ MonoBehaviour:
   timeBetweenShooting: 0.1
   spread: 3
   timeBetweenShots: 0.1
-  magazineSize: 15
+  magazineSize: 3
   bulletsPerTap: 1
   allowButtonHold: 0
   fpsCam: {fileID: 1098599606}
@@ -2272,7 +2272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df0af03ca4de49d48912d857104cdfab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2235303
+      value: -4.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df0af03ca4de49d48912d857104cdfab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2306,6 +2306,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: df0af03ca4de49d48912d857104cdfab, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0fa3a6a9a887ab543b7b188f30ed4a8e, type: 2}
     - target: {fileID: 919132149155446097, guid: df0af03ca4de49d48912d857104cdfab, type: 3}
       propertyPath: m_Name
       value: Bullet_Pistol_A
@@ -2323,38 +2327,13 @@ PrefabInstance:
       addedObject: {fileID: 1494374495}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df0af03ca4de49d48912d857104cdfab, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1494374494}
+      addedObject: {fileID: 1494374496}
   m_SourcePrefab: {fileID: 100100000, guid: df0af03ca4de49d48912d857104cdfab, type: 3}
 --- !u!1 &1494374493 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: df0af03ca4de49d48912d857104cdfab, type: 3}
   m_PrefabInstance: {fileID: 1494374492}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1494374494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494374493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3dada565e949e44481305df22366641, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 1494374495}
-  explosion: {fileID: 0}
-  whatIsEnemies:
-    serializedVersion: 2
-    m_Bits: 0
-  bounciness: 0.8
-  useGravity: 0
-  explosionDamage: 300
-  explosionRange: 1
-  explosionForce: 0
-  maxCollisions: 1
-  maxLifeTime: 0
-  explosionOnTouch: 1
 --- !u!54 &1494374495
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2382,6 +2361,18 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1494374496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494374493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3c5048e6d2ab342bcceb22f59ee494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1559428518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1571807527175990118, guid: 2e1a41d7362b3dd45bc95871553172dc, type: 3}
