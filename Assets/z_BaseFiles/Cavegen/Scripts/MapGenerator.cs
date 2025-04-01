@@ -14,6 +14,7 @@ public class MapGenerator : MonoBehaviour {
 	public GameObject groundObject;
 	public int width;
 	public int height;
+	public int bullets;
 
 	public string seed;
 	public bool useRandomSeed;
@@ -535,6 +536,7 @@ public class MapGenerator : MonoBehaviour {
         Vector3 randomNPCPos = Vector3.zero;
         bool validPositionFound = false;
         int attempts = 0;
+		bullets = 3;
 
         while (!validPositionFound && attempts < maxAttempts)
         {
