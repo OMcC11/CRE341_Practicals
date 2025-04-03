@@ -50,7 +50,7 @@ public class MapGenerator : MonoBehaviour {
 
 		SpawnWayPoints(numberWaypoints);
 		SpawnNPCs(numberOfNPCs);
-		SpawnGub(gunPrefab);
+		SpawnGun(gunPrefab);
 	}
 
 
@@ -71,7 +71,7 @@ public class MapGenerator : MonoBehaviour {
 
 			SpawnWayPoints(numberWaypoints);
 			SpawnNPCs(numberOfNPCs);
-            SpawnGub(gunPrefab);
+            SpawnGun(gunPrefab);
         }
 	}
 
@@ -531,7 +531,7 @@ public class MapGenerator : MonoBehaviour {
 		}
 	}
 
-    private void SpawnGub(GameObject gunPrefab)
+    private void SpawnGun(GameObject gunPrefab)
     {
         Vector3 randomNPCPos = Vector3.zero;
         bool validPositionFound = false;

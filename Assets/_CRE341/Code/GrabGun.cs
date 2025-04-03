@@ -8,10 +8,17 @@ public class GrabItem : MonoBehaviour
     public GameObject PickUpText;
     public GameObject GunOnPlayer;
 
+    private GunScript GS;
+
+    //int magazineSize = 3;
+
     private void Start()
     {
         GunOnPlayer.SetActive(false);
         PickUpText.SetActive(false);
+
+        GS = GunOnPlayer.GetComponent<GunScript>();
+
     }
 
     // Start is called before the first frame update
@@ -28,6 +35,8 @@ public class GrabItem : MonoBehaviour
                 GunOnPlayer.SetActive(true);
 
                 PickUpText.SetActive(false);
+
+                GS.ReloadGun();
             }
         }
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
 
-public class Gun : MonoBehaviour
+public class GunScript : MonoBehaviour
 {
     //bullet
     public GameObject bullet;
@@ -12,7 +12,7 @@ public class Gun : MonoBehaviour
 
     //gun stats
     public float timeBetweenShooting, spread, /*reloadTime,*/ timeBetweenShots;
-    public int magazineSize, bulletsPerTap;
+    public int magazineSize = 3, bulletsPerTap;
     public bool allowButtonHold;
 
     int bulletsLeft, bulletsShot;
@@ -27,9 +27,15 @@ public class Gun : MonoBehaviour
     //bug fixing
     public bool allowInvoke = true;
 
-    public void Awake()
+    //public void Awake()
+    //{
+    //    //make sure magazine is full
+    //    bulletsLeft = magazineSize;
+    //    readyToShoot = true;
+    //}
+
+    public void ReloadGun() 
     {
-        //make sure magazine is full
         bulletsLeft = magazineSize;
         readyToShoot = true;
     }
@@ -60,6 +66,11 @@ public class Gun : MonoBehaviour
         else if (bulletsLeft < 1)
         {
             this.GameObject().SetActive(false);
+        }
+
+        if (bulletsLeft > 0)
+        {
+            this.GameObject().SetActive(true);
         }
     }
 
