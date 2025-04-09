@@ -42,7 +42,10 @@ public class GunScript : MonoBehaviour
 
     public void Update()
     {
-        MyInput();
+        if(!PauseMenu.isPaused)
+        {
+            MyInput();
+        }
     }
 
     private void MyInput()
