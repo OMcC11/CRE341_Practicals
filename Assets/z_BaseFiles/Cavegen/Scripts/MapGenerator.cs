@@ -9,7 +9,7 @@ using UnityEditor.ShaderGraph.Internal;
 
 public class MapGenerator : MonoBehaviour {
 
-	public GameObject player; // Reference to your player prefab
+	public GameObject player, portal; // Reference to your player prefab
 	public GameObject npcPrefab, waypointsPrefab, gunPrefab; 
 	public GameObject groundObject;
 	public int width;
@@ -47,8 +47,10 @@ public class MapGenerator : MonoBehaviour {
 
         // After the NavMesh is generated/baked, place the player
         PlacePlayer();
+		PlacePortal();
 
-		SpawnWayPoints(numberWaypoints);
+
+        SpawnWayPoints(numberWaypoints);
 		SpawnNPCs(numberOfNPCs);
 		SpawnGun(gunPrefab);
 	}
@@ -57,24 +59,29 @@ public class MapGenerator : MonoBehaviour {
 
     void Update() {
 		if (Input.GetMouseButtonDown(1)) {
-			GenerateMap();
-			surface.BuildNavMesh();
-			PlacePlayer();
-
-			// delete existing NPCs and spawn new ones
-			GameObject[] go_npcs = GameObject.FindGameObjectsWithTag("NPC");
-			foreach (GameObject npc in go_npcs) Destroy(npc);
-
-
-			GameObject[] go_wps = GameObject.FindGameObjectsWithTag("Waypoint");
-			foreach (GameObject wp in go_wps) Destroy(wp);
-
-			SpawnWayPoints(numberWaypoints);
-			SpawnNPCs(numberOfNPCs);
-            SpawnGun(gunPrefab);
+			LevelGenerator();
         }
 	}
 
+    public void LevelGenerator()
+    {
+        GenerateMap();
+        surface.BuildNavMesh();
+        PlacePlayer();
+		PlacePortal();
+
+        // delete existing NPCs and spawn new ones
+        GameObject[] go_npcs = GameObject.FindGameObjectsWithTag("NPC");
+        foreach (GameObject npc in go_npcs) Destroy(npc);
+
+
+        GameObject[] go_wps = GameObject.FindGameObjectsWithTag("Waypoint");
+        foreach (GameObject wp in go_wps) Destroy(wp);
+
+        SpawnWayPoints(numberWaypoints);
+        SpawnNPCs(numberOfNPCs);
+        SpawnGun(gunPrefab);
+    }
 
     void GenerateMap() {
 		map = new int[width,height];
@@ -466,7 +473,14 @@ public class MapGenerator : MonoBehaviour {
 
 		player.transform.position = randomPlayerPos;
     }
-	
+
+    private void PlacePortal()
+    {
+        Vector3 randomPlayerPos = GetRandomGroundPoint();
+
+        portal.transform.position = randomPlayerPos;
+    }
+
     // Call this method to obtain a random point on an object tagged "Ground".
     public Vector3 GetRandomGroundPoint()
     {

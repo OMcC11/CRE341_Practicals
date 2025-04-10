@@ -11,6 +11,7 @@ TagManager:
   - Waypoint
   - Flocker
   - Bullet
+  - Portal
   layers:
   - Default
   - TransparentFX
