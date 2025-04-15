@@ -14,7 +14,7 @@ public class GrabItem : MonoBehaviour
 
     private void Start()
     {
-        GunOnPlayer.SetActive(false);
+        //GunOnPlayer.SetActive(false);
         PickUpText.SetActive(false);
 
         GS = GunOnPlayer.GetComponent<GunScript>();

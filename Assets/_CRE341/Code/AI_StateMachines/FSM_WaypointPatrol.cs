@@ -8,6 +8,9 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
 {
     GameObject NPC_00;
 
+    private float timer = 0.0f;
+    public float lengthOfTimeToChaseWaypoint = 10.0f;
+
     // list of gameObject waypoints
     List<GameObject> waypoints;
     [SerializeField] Transform WaypointTarget;
@@ -32,12 +35,23 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
         // Debug log showing the current state
         Debug.Log("On State Update ~ Patrol State");
 
-        // get parent object of the object containing the animator
-        if (Vector3.Distance(NPC_00.transform.position, WaypointTarget.position) < 0.1f)
+        if (timer < lengthOfTimeToChaseWaypoint)
         {
+            timer += 1.0f * Time.deltaTime;
+        }
+        else if (timer >= lengthOfTimeToChaseWaypoint)
+        {
+            timer = 0.0f;
             WaypointTarget = waypoints[Random.Range(0, waypoints.Count)].transform;
             NPC_00.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
         }
+
+        // get parent object of the object containing the animator
+        //if (Vector3.Distance(NPC_00.transform.position, WaypointTarget.position) < 0.1f)
+        //{
+        //    WaypointTarget = waypoints[Random.Range(0, waypoints.Count)].transform;
+        //    NPC_00.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
+        //}
         
         //NPC_00.transform.position = Vector3.MoveTowards(animator.transform.position, WaypointTarget.position, GameManager.Instance.NPC_AI_01.Speed * Time.deltaTime);
     }

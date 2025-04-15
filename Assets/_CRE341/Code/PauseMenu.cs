@@ -28,6 +28,8 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -35,6 +37,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
@@ -58,3 +62,119 @@ public class PauseMenu : MonoBehaviour
     }
 
 }
+
+//using Unity.VisualScripting;
+//using UnityEngine;
+
+//using UnityEngine.SceneManagement;
+
+
+
+//public class PauseMenu : MonoBehaviour
+//{
+//    public GameObject pauseMenu;
+//    public GameObject player;
+//    [SerializeField]
+//    public static bool isPaused;
+
+//    void Start()
+//    {
+//        pauseMenu.SetActive(false);
+//        //isPaused = false;
+//    }
+
+//    void Update()
+//    {
+//        if (Input.GetKeyDown(KeyCode.Escape))
+
+//        {
+//            if (isPaused)
+
+//            {
+
+//                ResumeGame();
+
+//            }
+
+//            else
+
+//            {
+
+//                PauseGame();
+
+//            }
+
+//        }
+
+//    }
+
+
+
+//    public void PauseGame()
+//    {
+//        Cursor.lockState = CursorLockMode.None;
+//        Cursor.visible = true;
+
+
+//        Debug.Log("paused");
+//        //player.GetComponent<AB_Pistoil_Base>().
+//        pauseMenu.SetActive(true);
+
+//        Time.timeScale = 0f;
+
+//        isPaused = true;
+//    }
+
+
+
+//    public void ResumeGame()
+
+//    {
+//        Cursor.lockState = CursorLockMode.Locked;
+//        Cursor.visible = false;
+
+
+//        Debug.Log("un-paused");
+//        pauseMenu.SetActive(false);
+
+//        Time.timeScale = 1f;
+
+//        isPaused = false;
+
+//    }
+
+
+
+//    public void GoToMainMenu()
+
+//    {
+
+//        Time.timeScale = 1f;
+
+//        SceneManager.LoadScene("OMcC_MainMenu");
+
+//        isPaused = false;
+
+//    }
+
+
+
+//    public void QuitGame()
+
+//    {
+
+//        Application.Quit();
+
+
+
+//#if UNITY_EDITOR
+
+//        UnityEditor.EditorApplication.isPlaying = false;
+
+//#endif
+
+//    }
+
+//}
+
+

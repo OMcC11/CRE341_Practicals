@@ -219,7 +219,6 @@ GameObject:
   - component: {fileID: 7937534550287617212}
   - component: {fileID: 937898813399092693}
   - component: {fileID: 4022439660354917541}
-  - component: {fileID: 8461717809927009015}
   - component: {fileID: 284257896403573845}
   m_Layer: 7
   m_Name: NPC_New
@@ -236,7 +235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623620376051359729}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.6487945, y: -21.83, z: 27.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -285,7 +284,7 @@ MonoBehaviour:
   player: {fileID: 0}
   distanceToPlayer: 0
   playerVisible: 1
-  chaseDistance: 20
+  chaseDistance: 10
   attackDistance: 5
   chaseHysterisis: 2
   attackHysterisis: 0.5
@@ -314,18 +313,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8461717809927009015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623620376051359729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 413bda9d908c5df4494df59243e07eca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &284257896403573845
 MonoBehaviour:
   m_ObjectHideFlags: 0
