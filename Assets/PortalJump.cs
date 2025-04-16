@@ -3,6 +3,8 @@ using UnityEngine;
 public class PortalJump : MonoBehaviour
 {
     public MapGenerator MapGenerator;
+    private int NumOfJumps = 0;
+
     void Start()
     {
         
@@ -17,6 +19,13 @@ public class PortalJump : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Player")
-            MapGenerator.LevelGenerator();
+            if (NumOfJumps < 3)
+            {
+                MapGenerator.LevelGenerator();
+            }
+            else
+            {
+
+            }
     }
 }

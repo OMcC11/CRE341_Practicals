@@ -6,6 +6,7 @@ using Unity.AI.Navigation;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 using UnityEditor.ShaderGraph.Internal;
+using UnityEngine.SceneManagement;
 
 public class MapGenerator : MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class MapGenerator : MonoBehaviour {
 	public int width;
 	public int height;
 	public int bullets;
+	public string scenename;
 
 	public string seed;
 	public bool useRandomSeed;
@@ -32,8 +34,9 @@ public class MapGenerator : MonoBehaviour {
 	[SerializeField] public NavMeshSurface surface;
 	[SerializeField] private float raycastHeight = 50f; // Height above the plane from which to cast rays.
     [SerializeField] private int maxAttempts = 1000; // Safety limit to avoid an infinite loop.
+	public PortalController portalController;
 
-	void Start() {
+    void Start() {
 
 
         if (groundObject == null)
@@ -42,18 +45,25 @@ public class MapGenerator : MonoBehaviour {
             return;
         }
 
-        GenerateMap();
-		surface.BuildNavMesh();
+        if (portalController.NumOfJumps < portalController.maxNumberOfJumps)
+		{
+            GenerateMap();
+            surface.BuildNavMesh();
 
-        // After the NavMesh is generated/baked, place the player
-        PlacePlayer();
-		PlacePortal();
+            // After the NavMesh is generated/baked, place the player
+            PlacePlayer();
+            PlacePortal();
 
 
-        SpawnWayPoints(numberWaypoints);
-		SpawnNPCs(numberOfNPCs);
-		SpawnGun(gunPrefab);
-	}
+            SpawnWayPoints(numberWaypoints);
+            SpawnNPCs(numberOfNPCs);
+            SpawnGun(gunPrefab);
+        }
+		else
+		{
+            // Transition to final scene
+        }
+    }
 
 
 
@@ -65,26 +75,35 @@ public class MapGenerator : MonoBehaviour {
 
     public void LevelGenerator()
     {
-        GenerateMap();
-        surface.BuildNavMesh();
-        PlacePlayer();
-		PlacePortal();
+        if (portalController.NumOfJumps < portalController.maxNumberOfJumps)
+        {
+            // Transition to final scene
+            GenerateMap();
+            surface.BuildNavMesh();
+            PlacePlayer();
+            PlacePortal();
 
-        // delete existing NPCs and spawn new ones
-        GameObject[] go_npcs = GameObject.FindGameObjectsWithTag("NPC");
-        foreach (GameObject npc in go_npcs) Destroy(npc);
+            // delete existing NPCs and spawn new ones
+            GameObject[] go_npcs = GameObject.FindGameObjectsWithTag("NPC");
+            foreach (GameObject npc in go_npcs) Destroy(npc);
 
 
-        GameObject[] go_wps = GameObject.FindGameObjectsWithTag("Waypoint");
-        foreach (GameObject wp in go_wps) Destroy(wp);
+            GameObject[] go_wps = GameObject.FindGameObjectsWithTag("Waypoint");
+            foreach (GameObject wp in go_wps) Destroy(wp);
 
-        SpawnWayPoints(numberWaypoints);
-        SpawnNPCs(numberOfNPCs);
-        SpawnGun(gunPrefab);
+            SpawnWayPoints(numberWaypoints);
+            SpawnNPCs(numberOfNPCs);
+            SpawnGun(gunPrefab);
+        }
+        else
+        {
+            SceneManager.LoadScene(scenename);
+        }
     }
 
     void GenerateMap() {
-		map = new int[width,height];
+		portalController.NumOfJumps++;
+        map = new int[width,height];
 		RandomFillMap();
 
 		for (int i = 0; i < 5; i ++) {

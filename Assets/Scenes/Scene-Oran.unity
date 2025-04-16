@@ -780,6 +780,7 @@ MonoBehaviour:
   width: 128
   height: 128
   bullets: 3
+  scenename: Rules
   seed: 0
   useRandomSeed: 1
   randomFillPercent: 50
@@ -790,6 +791,7 @@ MonoBehaviour:
   surface: {fileID: 797153120}
   raycastHeight: 50
   maxAttempts: 1000
+  portalController: {fileID: 1865845457}
 --- !u!4 &509230443
 Transform:
   m_ObjectHideFlags: 0
@@ -3559,6 +3561,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: {fileID: 1805273386}
   lengthOfTimeBeforePortalSpawn: 30
+  NumOfJumps: 0
+  maxNumberOfJumps: 3
 --- !u!4 &1865845458
 Transform:
   m_ObjectHideFlags: 0
