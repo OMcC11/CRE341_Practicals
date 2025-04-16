@@ -12,8 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 08e0829abb70c1f4b94e1a3405821f3f
   - enabled: 1
-    path: Assets/Scenes/Scene-Oran.unity
+    path: Assets/Scenes/Game.unity
     guid: df7ab65f4f01f0948a3c344c339bea10
+  - enabled: 1
+    path: Assets/Scenes/Rules.unity
+    guid: 0f79c7fd6ccc5434e862cbc228fd4ae0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
