@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class FSM_WaypointPatrol : StateMachineBehaviour
 {
-    GameObject NPC_00;
+    GameObject NPC_New;
 
     private float timer = 0.0f;
     public float lengthOfTimeToChaseWaypoint = 10.0f;
@@ -25,8 +25,8 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
         waypoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Waypoint"));
         WaypointTarget = waypoints[Random.Range(0, waypoints.Count)].transform;
 
-        NPC_00 = animator.transform.parent.gameObject;
-        NPC_00.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
+        NPC_New = animator.transform.parent.gameObject;
+        NPC_New.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -43,7 +43,7 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
         {
             timer = 0.0f;
             WaypointTarget = waypoints[Random.Range(0, waypoints.Count)].transform;
-            NPC_00.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
+            NPC_New.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
         }
 
         // get parent object of the object containing the animator

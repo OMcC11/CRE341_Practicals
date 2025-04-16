@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int health;
     public int maxHealth = 10;
+    public int scenename;
 
     private void Start()
     {
@@ -16,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(scenename);
         }
     }
 }
