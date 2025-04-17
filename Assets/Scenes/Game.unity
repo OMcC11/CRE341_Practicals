@@ -840,7 +840,7 @@ MonoBehaviour:
   width: 128
   height: 128
   bullets: 3
-  scenename: Rules
+  scenename: Win
   seed: 0
   useRandomSeed: 1
   randomFillPercent: 50
