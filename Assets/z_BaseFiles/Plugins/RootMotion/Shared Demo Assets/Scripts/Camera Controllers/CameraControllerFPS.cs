@@ -21,7 +21,7 @@ namespace RootMotion {
 		}
 
 		public void LateUpdate() {
-			Cursor.lockState = CursorLockMode.Locked;
+			//Cursor.lockState = CursorLockMode.Locked;
 
 			x += Input.GetAxis("Mouse X") * rotationSensitivity;
 			y = ClampAngle(y - Input.GetAxis("Mouse Y") * rotationSensitivity, yMinLimit, yMaxLimit);
