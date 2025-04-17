@@ -22,6 +22,13 @@ public class PauseMenu : MonoBehaviour
             else
             {
                 PauseGame();
+
+                //AudioSource[] audios = FindAnyObjectByType<AudioSource>();
+
+                //foreach (AudioSource a in audios)
+                //{
+                //    a.Play();
+                //}
             }
         }
     }

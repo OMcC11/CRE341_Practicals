@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             SceneManager.LoadScene(scenename);
         }
     }
