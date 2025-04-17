@@ -5,7 +5,6 @@ using System;
 using Unity.AI.Navigation;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine.SceneManagement;
 
 public class MapGenerator : MonoBehaviour {
@@ -25,7 +24,7 @@ public class MapGenerator : MonoBehaviour {
 	public int randomFillPercent;
 
 	[SerializeField] int numberOfNPCs = 5;
-	[SerializeField] List<GameObject> npcs = new List<GameObject>();
+	public List<GameObject> npcs = new List<GameObject>();
 	[SerializeField] int numberWaypoints = 4;
 	[SerializeField] List<GameObject> waypoints = new List<GameObject>();
 
@@ -68,9 +67,9 @@ public class MapGenerator : MonoBehaviour {
 
 
     void Update() {
-		if (Input.GetMouseButtonDown(1)) {
-			LevelGenerator();
-        }
+		//if (Input.GetMouseButtonDown(1)) {
+		//	LevelGenerator();
+        //}
 	}
 
     public void LevelGenerator()

@@ -2951,6 +2951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 455931363}
+  audioSources: []
 --- !u!4 &1451211069 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6567996117599507002, guid: 2e1a41d7362b3dd45bc95871553172dc, type: 3}
@@ -3140,7 +3141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maxHealth: 1
-  scenename: 5
+  scenename: 4
 --- !u!1 &1638841456
 GameObject:
   m_ObjectHideFlags: 0
@@ -4665,6 +4666,10 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 1098599606}
+    - target: {fileID: 5684345077923796827, guid: dca1e33cdb8036c4ea510b53b092bfc4, type: 3}
+      propertyPath: AudioClip
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

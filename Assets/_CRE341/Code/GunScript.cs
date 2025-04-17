@@ -17,6 +17,8 @@ public class GunScript : MonoBehaviour
 
     int bulletsLeft, bulletsShot;
 
+    public GameObject AudioClip;
+
     //bools
     bool shooting, readyToShoot/*reloading*/;
 
