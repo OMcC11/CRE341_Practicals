@@ -1,3 +1,4 @@
+//Old Code
 //using UnityEngine;
 //using UnityEngine.AI;
 
@@ -21,6 +22,8 @@
 //    }
 //}
 
+
+//New Improved Code
 using UnityEngine;
 using UnityEngine.AI;
 

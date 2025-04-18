@@ -3763,7 +3763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portal: {fileID: 1805273386}
-  lengthOfTimeBeforePortalSpawn: 10
+  lengthOfTimeBeforePortalSpawn: 5
   NumOfJumps: 0
   maxNumberOfJumps: 3
 --- !u!4 &1865845458
